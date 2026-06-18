@@ -34,26 +34,76 @@ for(let i=0;i<60;i++){
 
     particles.appendChild(p);
 }
-const btn = document.getElementById("openBtn");
 
-const welcome = document.getElementById("welcome-screen");
+const btn =
+document.getElementById("openBtn");
 
-const card = document.getElementById("card-container");
+const welcome =
+document.getElementById("welcome-screen");
+
+const card =
+document.getElementById("card-container");
+
+const bgm =
+document.getElementById("bgm");
+
+function startMusic(){
+
+    bgm.volume = 0;
+
+    bgm.play().catch(err => {
+        console.log(err);
+    });
+
+    let volume = 0;
+
+    const fadeInterval =
+    setInterval(() => {
+
+        volume += 0.005;
+
+        if(volume >= 0.18){
+
+            volume = 0.18;
+
+            clearInterval(
+                fadeInterval
+            );
+        }
+
+        bgm.volume = volume;
+
+    },100);
+
+}
 
 btn.addEventListener("click", () => {
-  confetti({
-    particleCount: 200,
 
-    spread: 120,
+    startMusic();
 
-    origin: { y: 0.6 },
-  });
+    confetti({
 
-  welcome.classList.add("fade-out");
+        particleCount:200,
 
-  setTimeout(() => {
-    welcome.style.display = "none";
+        spread:120,
 
-    card.classList.add("show");
-  }, 1000);
+        origin:{ y:0.6 }
+
+    });
+
+    welcome.classList.add(
+        "fade-out"
+    );
+
+    setTimeout(() => {
+
+        welcome.style.display =
+        "none";
+
+        card.classList.add(
+            "show"
+        );
+
+    },1000);
+
 });
