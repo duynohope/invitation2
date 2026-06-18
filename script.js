@@ -88,13 +88,13 @@ btn.addEventListener("click", () => {
 
         spread:220,
 
-        startVelocity:55,
+        startVelocity:60,
 
-        gravity:0.9,
+        gravity:1,
 
         scalar:1.2,
 
-        ticks:300,
+        ticks:400,
 
         origin:{
             x:0.5,
@@ -103,6 +103,8 @@ btn.addEventListener("click", () => {
 
     });
 
+    startFallingConfetti();
+
     welcome.classList.add("fade-out");
 
     setTimeout(() => {
@@ -110,8 +112,6 @@ btn.addEventListener("click", () => {
         welcome.style.display = "none";
 
         card.classList.add("show");
-
-        startFallingConfetti();
 
     },1000);
 
@@ -127,25 +127,28 @@ function startFallingConfetti(){
 
             angle:90,
 
-            spread:20,
+            spread:15,
 
-            startVelocity:4,
+            startVelocity:12,
 
-            gravity:0.12,
+            gravity:0.25,
 
             drift:
-            (Math.random()-0.5)*4,
+            (Math.random()-0.5)*5,
 
             scalar:
             Math.random()*0.5+0.8,
 
-            ticks:700,
+            ticks:1800,
+
+            shapes:[
+                "square"
+            ],
 
             colors:[
                 "#d4af37",
-                "#f0d77a",
-                "#c99c1d",
-                "#ffffff"
+                "#e7c55a",
+                "#f3df9a"
             ],
 
             origin:{
@@ -155,6 +158,6 @@ function startFallingConfetti(){
 
         });
 
-    },500);
+    },250);
 
 }
