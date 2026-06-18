@@ -70,7 +70,7 @@ body::before{
 .invite-card {
   text-align: center;
 
-  color:#d4af37;
+  color:white;
 
   padding: 30px;
 }
@@ -132,7 +132,7 @@ body::before{
   0 0 25px rgba(255,0,0,.35),
   inset 8px 8px 15px rgba(255,255,255,.15),
   inset -8px -8px 15px rgba(0,0,0,.25);
-  color:white;
+  color:#d4af37;
   font-size:30px;
   font-weight:bold;
   transition:.3s;
