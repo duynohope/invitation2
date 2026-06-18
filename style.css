@@ -13,12 +13,24 @@ body {
   align-items: center;
 
   background:
+  radial-gradient(
+  circle at top,
+  #0b4d7a 0%,
+  transparent 40%
+  ),
+  
+  radial-gradient(
+  circle at bottom right,
+  #03203a 0%,
+  transparent 35%
+  ),
+  
   linear-gradient(
   135deg,
-  #021a2d 0%,
-  #06345a 40%,
-  #042947 70%,
-  #011522 100%
+  #02121f 0%,
+  #06375c 40%,
+  #052d4b 70%,
+  #01111d 100%
   );
 
   font-family: "Montserrat", sans-serif;
@@ -101,17 +113,20 @@ body::before{
 }
 
 .seal{
-  width:130px;
-  height:130px;
+  width:95px;
+  height:95px;
   border:none;
   cursor:pointer;
-  border-radius:40% 45% 38% 42%;
+  border-radius:
+46% 42% 50% 40%
+/
+40% 48% 42% 46%;
   background:
   radial-gradient(
   circle at 30% 30%,
-  #ff7a7a,
-  #c60000 65%,
-  #8f0000
+  #d24a4a
+  #a50f0f
+  #690606
   );
   box-shadow:
   0 0 25px rgba(255,0,0,.35),
@@ -234,11 +249,12 @@ position:fixed;
 inset:0;
 background-image:
 radial-gradient(
-rgba(255,215,0,.5) 1px,
-transparent 1px
+rgba(255,215,0,.8) 1.5px,
+transparent 1.5px
 );
-background-size:120px 120px;
-opacity:.25;
+background-size:70px 70px;
+opacity:.5;
+filter:blur(.3px);
 animation:floatDust 25s linear infinite;
 }
 @keyframes floatDust{
@@ -248,4 +264,24 @@ transform:translateY(0);
 to{
 transform:translateY(-120px);
 }
+}
+
+.cap{
+animation:floatCap 4s ease-in-out infinite;
+}
+
+@keyframes floatCap{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0);
+}
+
 }
