@@ -75,27 +75,50 @@ opacity:.7;
 
 body::after{
 content:"";
+
 position:fixed;
-inset:0;
+
+top:-50%;
+left:-50%;
+
+width:80%;
+height:250%;
+
 background:
 linear-gradient(
 90deg,
-transparent 0%,
-rgba(255,255,255,.02) 45%,
-rgba(255,255,255,.05) 50%,
-rgba(255,255,255,.02) 55%,
-transparent 100%
+transparent,
+rgba(255,255,255,.03),
+rgba(255,255,255,.08),
+rgba(255,255,255,.12),
+rgba(255,255,255,.08),
+rgba(255,255,255,.03),
+transparent
 );
-animation:lightBeam 16s linear infinite;
+
+filter:blur(40px);
+
+transform:rotate(25deg);
+
 pointer-events:none;
+
+animation:diagonalBeam 6s linear infinite;
 }
-@keyframes lightBeam{
+
+@keyframes diagonalBeam{
+
 0%{
-transform:translateX(-60%);
+transform:
+translate(-120%,-120%)
+rotate(25deg);
 }
+
 100%{
-transform:translateX(60%);
+transform:
+translate(220%,220%)
+rotate(25deg);
 }
+
 }
 
 #welcome-screen {
