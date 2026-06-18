@@ -70,7 +70,7 @@ body::before{
 .invite-card {
   text-align: center;
 
-  color: white;
+  color:#d4af37;
 
   padding: 30px;
 }
@@ -113,8 +113,8 @@ body::before{
 }
 
 .seal{
-  width:95px;
-  height:95px;
+  width:75px;
+  height:75px;
   border:none;
   cursor:pointer;
   border-radius:
@@ -133,10 +133,11 @@ body::before{
   inset 8px 8px 15px rgba(255,255,255,.15),
   inset -8px -8px 15px rgba(0,0,0,.25);
   color:white;
-  font-size:52px;
+  font-size:30px;
   font-weight:bold;
   transition:.3s;
   animation:pulseSeal 3s infinite;
+  margin-top:60px;
 }
 
 .seal:hover {
@@ -245,19 +246,38 @@ body::before{
 }
 
 .particles{
+
 position:fixed;
+
 inset:0;
-opacity:.5;
-filter:blur(.3px);
-animation:floatDust 25s linear infinite;
+
+pointer-events:none;
+
+overflow:hidden;
 }
-@keyframes floatDust{
-from{
+
+.particle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:#d4af37;
+
+animation:
+floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+
+0%{
 transform:translateY(0);
 }
-to{
+
+100%{
 transform:translateY(-120px);
 }
+
 }
 
 .cap{
