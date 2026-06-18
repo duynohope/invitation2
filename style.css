@@ -247,12 +247,6 @@ body::before{
 .particles{
 position:fixed;
 inset:0;
-background-image:
-radial-gradient(
-rgba(255,215,0,.8) 1.5px,
-transparent 1.5px
-);
-background-size:70px 70px;
 opacity:.5;
 filter:blur(.3px);
 animation:floatDust 25s linear infinite;
